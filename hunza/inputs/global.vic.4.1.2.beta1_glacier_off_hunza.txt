@@ -1,0 +1,143 @@
+#######################################################################
+# VIC Model Parameters - 4.1.x
+#######################################################################
+# $Id: global.param.sample,v 5.7.2.17 2009/08/25 00:45:12 vicadmin Exp $
+
+#######################################################################
+# Simulation Parameters
+#######################################################################
+TIME_STEP           3
+SNOW_STEP           3
+STARTYEAR           1948 
+STARTMONTH          01 
+STARTDAY            01 
+STARTHOUR           00 
+ENDYEAR             2010 
+ENDMONTH            12 
+ENDDAY              31 
+
+MIN_WIND_SPEED      0.1
+MAX_SNOW_TEMP       1.5
+MIN_RAIN_TEMP       -0.5 
+EQUAL_AREA          FALSE
+
+FULL_ENERGY         TRUE   
+CORRPREC            FALSE
+DIST_PRCP           FALSE    
+PREC_EXPT 0.6
+
+CONTINUEONERROR     FALSE  
+
+#######################################################################
+# Snow and Frozen Soil Simulation Options
+#######################################################################
+FROZEN_SOIL         TRUE 
+QUICK_FLUX          TRUE 
+NODES               3
+QUICK_SOLVE         FALSE
+NO_FLUX             FALSE
+IMPLICIT            FALSE
+EXP_TRANS           FALSE
+
+SNOW_ALBEDO         SUN1999
+SNOW_DENSITY        DENS_SNTHRM  
+BLOWING             FALSE
+GLACIER             FALSE   
+
+#######################################################################
+# Lake Simulation Options
+#######################################################################
+# RESOLUTION          0.25 
+# LAKES              ./inputs/lakes.txt 
+# LAKE_PROFILE        TRUE 
+
+#######################################################################
+# Mountainous Simulation Options
+#######################################################################
+PLAPSE              TRUE 
+COMPUTE_TREELINE    FALSE
+SNOW_BAND           8 /Users/jhamman/workdir/VIC_glacier_tests/hunza/inputs/snowbnd_betagl.txt
+
+#######################################################################
+# Land Surface Files and Parameters
+#######################################################################
+NLAYER              3
+SOIL                /Users/jhamman/workdir/VIC_glacier_tests/hunza/inputs/soil_betagl.txt    
+ARC_SOIL            FALSE  
+BASEFLOW            ARNO 
+JULY_TAVG_SUPPLIED  TRUE 
+VEGPARAM            /Users/jhamman/workdir/VIC_glacier_tests/hunza/inputs/veg_std.txt  
+VEGPARAM_LAI TRUE 
+LAI_SRC LAI_FROM_VEGLIB   
+ROOT_ZONES          3
+VEGLIB              /Users/jhamman/workdir/VIC_glacier_tests/hunza/inputs/veglib_lumped.txt
+
+#######################################################################
+# State Files and  Parameters
+#######################################################################
+#INIT_STATE       
+# STATENAME         /Users/jhamman/Dropbox/BPA/To_Joe_VIC_glacier/VIC_glacier/output_glchanges_ind/STATE_
+STATEYEAR           2008 
+STATEMONTH          9
+STATEDAY            30 
+BINARY_STATE_FILE   FALSE
+
+#######################################################################
+# Forcing Files and Parameters
+#######################################################################
+FORCING1  /Users/jhamman/workdir/VIC_glacier_tests/hunza/forcings/forcings_     
+N_TYPES             7
+FORCE_TYPE          AIR_TEMP        SIGNED          100
+FORCE_TYPE          VP              UNSIGNED        1000
+FORCE_TYPE          PRESSURE        UNSIGNED        100
+FORCE_TYPE          WIND            UNSIGNED        100
+FORCE_TYPE          SHORTWAVE       UNSIGNED        10
+FORCE_TYPE          LONGWAVE        UNSIGNED        10
+FORCE_TYPE          PREC            UNSIGNED        100
+FORCE_FORMAT        BINARY
+FORCE_ENDIAN        LITTLE         
+FORCE_DT            3              
+FORCEYEAR           1948           
+FORCEMONTH          1              
+FORCEDAY            1              
+FORCEHOUR           0              
+GRID_DECIMAL        3
+WIND_H              10.0   
+MEASURE_H           2.0    
+ALMA_INPUT          FALSE
+
+#######################################################################
+# Output Files and Parameters
+#######################################################################
+RESULT_DIR          /Users/jhamman/workdir/VIC_glacier_tests/hunza/outputs/vic.4.1.2.beta1_glacier_off_hunza
+OUT_STEP            24     
+SKIPYEAR            0
+COMPRESS            FALSE
+BINARY_OUTPUT       FALSE
+ALMA_OUTPUT         FALSE
+MOISTFRACT          FALSE
+PRT_HEADER          TRUE  
+PRT_SNOW_BAND       TRUE  
+ 
+#######################################################################
+# Output File Contents
+#######################################################################
+
+  N_OUTFILES    2
+
+  OUTFILE       fluxes        8
+  OUTVAR        OUT_PREC          %.4f        OUT_TYPE_FLOAT 1
+  OUTVAR        OUT_AIR_TEMP      %.4f        OUT_TYPE_FLOAT 1
+  OUTVAR        OUT_SHORTWAVE     %.4f        OUT_TYPE_FLOAT 1
+  OUTVAR        OUT_LONGWAVE      %.4f        OUT_TYPE_FLOAT 1
+  OUTVAR        OUT_EVAP          %.4f        OUT_TYPE_FLOAT 1
+  OUTVAR        OUT_RUNOFF        %.4f        OUT_TYPE_FLOAT 1
+  OUTVAR        OUT_BASEFLOW      %.4f        OUT_TYPE_FLOAT 1
+  OUTVAR        OUT_SOIL_MOIST    %.4f        OUT_TYPE_FLOAT 1
+
+  OUTFILE      snow           3
+  OUTVAR       OUT_SWE            %.4f        OUT_TYPE_FLOAT 1
+  OUTVAR       OUT_SNOW_MELT      %.4f        OUT_TYPE_FLOAT 1
+  OUTVAR       OUT_SWE_BAND       %.4f        OUT_TYPE_FLOAT 1
+#  OUTVAR       OUT_IWE_BAND     %.4f        OUT_TYPE_FLOAT 1
+#  OUTVAR       OUT_BN_BAND      %.4f        OUT_TYPE_FLOAT 1

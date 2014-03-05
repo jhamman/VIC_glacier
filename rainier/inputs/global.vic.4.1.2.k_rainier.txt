@@ -1,0 +1,139 @@
+#######################################################################
+# VIC Model Parameters - 4.1.x
+#######################################################################
+# $Id: global.param.sample,v 5.7.2.17 2009/08/25 00:45:12 vicadmin Exp $
+
+#######################################################################
+# Simulation Parameters
+#######################################################################
+TIME_STEP           3
+SNOW_STEP           3
+STARTYEAR           1948 
+STARTMONTH          01 
+STARTDAY            01 
+STARTHOUR           00 
+ENDYEAR             2010 
+ENDMONTH            12 
+ENDDAY              31 
+
+MIN_WIND_SPEED      0.1
+MAX_SNOW_TEMP       0.5
+MIN_RAIN_TEMP       -0.5 
+EQUAL_AREA          FALSE
+
+FULL_ENERGY         TRUE   
+CORRPREC            FALSE
+DIST_PRCP           FALSE    
+PREC_EXPT 0.6
+
+CONTINUEONERROR     FALSE  
+
+#######################################################################
+# Snow and Frozen Soil Simulation Options
+#######################################################################
+FROZEN_SOIL         FALSE 
+QUICK_FLUX          TRUE 
+NODES               3
+QUICK_SOLVE         FALSE
+NO_FLUX             FALSE
+IMPLICIT            FALSE
+EXP_TRANS           FALSE
+
+SNOW_ALBEDO        SUN1999
+SNOW_DENSITY       DENS_BRAS
+BLOWING             FALSE
+
+#######################################################################
+# Lake Simulation Options
+#######################################################################
+# RESOLUTION          0.25 
+# LAKES              ./inputs/lakes.txt 
+# LAKE_PROFILE        TRUE 
+
+#######################################################################
+# Mountainous Simulation Options
+#######################################################################
+PLAPSE              TRUE 
+COMPUTE_TREELINE    FALSE
+SNOW_BAND           5 /Users/jhamman/workdir/VIC_glacier_tests/rainier/inputs/snowbnd_std.txt
+
+#######################################################################
+# Land Surface Files and Parameters
+#######################################################################
+NLAYER              3
+SOIL                /Users/jhamman/workdir/VIC_glacier_tests/rainier/inputs/soil_std.txt    
+ARC_SOIL            FALSE  
+BASEFLOW            ARNO 
+JULY_TAVG_SUPPLIED  FALSE 
+VEGPARAM            /Users/jhamman/workdir/VIC_glacier_tests/rainier/inputs/veg_std.txt  
+VEGPARAM_LAI TRUE 
+LAI_SRC LAI_FROM_VEGLIB
+ROOT_ZONES          3
+VEGLIB              /Users/jhamman/workdir/VIC_glacier_tests/rainier/inputs/LDAS_veg_lib
+
+#######################################################################
+# State Files and  Parameters
+#######################################################################
+#INIT_STATE       
+# STATENAME         /Users/jhamman/Dropbox/BPA/To_Joe_VIC_glacier/VIC_glacier/output_glchanges_ind/STATE_
+STATEYEAR           2008 
+STATEMONTH          9
+STATEDAY            30 
+BINARY_STATE_FILE   FALSE
+
+#######################################################################
+# Forcing Files and Parameters
+#######################################################################
+FORCING1            /Users/jhamman/workdir/VIC_glacier_tests/rainier/forcings/data_       
+FORCE_FORMAT        ASCII
+FORCE_ENDIAN        LITTLE
+N_TYPES             4 
+FORCE_TYPE          PREC  
+FORCE_TYPE          TMAX  
+FORCE_TYPE          TMIN  
+FORCE_TYPE          WIND  
+FORCE_DT            24 
+FORCEYEAR           1915 
+FORCEMONTH          01     
+FORCEDAY            01 
+FORCEHOUR           00 
+GRID_DECIMAL        5
+WIND_H              10.0   
+MEASURE_H           2.0    
+ALMA_INPUT          FALSE
+
+#######################################################################
+# Output Files and Parameters
+#######################################################################
+RESULT_DIR          /Users/jhamman/workdir/VIC_glacier_tests/rainier/outputs/vic.4.1.2.k_rainier
+OUT_STEP            24     
+SKIPYEAR            0
+COMPRESS            FALSE
+BINARY_OUTPUT       FALSE
+ALMA_OUTPUT         FALSE
+MOISTFRACT          FALSE
+PRT_HEADER          TRUE  
+PRT_SNOW_BAND       TRUE  
+ 
+#######################################################################
+# Output File Contents
+#######################################################################
+
+#   N_OUTFILES    2
+
+#   OUTFILE       fluxes        8
+#   OUTVAR        OUT_PREC          %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR        OUT_AIR_TEMP      %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR        OUT_SHORTWAVE     %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR        OUT_LONGWAVE      %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR        OUT_EVAP          %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR        OUT_RUNOFF        %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR        OUT_BASEFLOW      %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR        OUT_SOIL_MOIST    %.4f        OUT_TYPE_FLOAT 1
+
+#   OUTFILE      snow        3
+#   OUTVAR       OUT_SWE            %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR       OUT_SNOW_MELT      %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR       OUT_SWE_BAND       %.4f        OUT_TYPE_FLOAT 1
+# #  OUTVAR       OUT_IWE_BAND     %.4f        OUT_TYPE_FLOAT 1
+# #  OUTVAR       OUT_BN_BAND      %.4f        OUT_TYPE_FLOAT 1

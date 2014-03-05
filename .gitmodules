@@ -1,0 +1,9 @@
+[submodule "vic_code/VIC.4.2.dev+glacier"]
+	path = vic_code/VIC.4.2.dev+glacier
+	url = git@github.com:jhamman/VIC.git
+[submodule "vic_code/VIC.4.2.dev"]
+	path = vic_code/VIC.4.2.dev
+	url = git@github.com:UW-HYDRO/VIC.git
+[submodule "vic_code/VIC.4.1.2.k"]
+	path = vic_code/VIC.4.1.2.k
+	url = git@github.com:UW-HYDRO/VIC.git

@@ -1,0 +1,177 @@
+#######################################################################
+# VIC Model Parameters - 4.1.x
+#######################################################################
+# $Id: global.param.sample,v 5.7.2.17 2009/08/25 00:45:12 vicadmin Exp $
+
+#######################################################################
+# Simulation Parameters
+#######################################################################
+TIME_STEP           3
+SNOW_STEP           3
+STARTYEAR           1948 
+STARTMONTH          01 
+STARTDAY            01 
+STARTHOUR           00 
+ENDYEAR             2010 
+ENDMONTH            12 
+ENDDAY              31 
+
+#######################################################################
+# Energy Balance Parameters
+#######################################################################
+FULL_ENERGY         TRUE
+#CLOSE_ENERGY       TRUE
+
+#######################################################################
+# Soil Temperature Parameters
+# VIC will choose appropriate value for QUICK_FLUX depending on values of FULL_ENERGY and FROZEN_SOIL; the user should only need to override VIC's choices in special cases.
+# The other options in this section are only applicable when FROZEN_SOIL is TRUE and their values depend on the application.
+#######################################################################
+FROZEN_SOIL         FALSE
+#QUICK_FLUX         FALSE
+#IMPLICIT           TRUE
+#QUICK_SOLVE        FALSE
+#NO_FLUX            FALSE
+#EXP_TRANS          TRUE
+#GRND_FLUX_TYPE     GF_410
+
+#TFALLBACK          TRUE
+#SPATIAL_FROST      FALSE
+
+#######################################################################
+# Precip (Rain and Snow) Parameters
+# Generally these default values do not need to be overridden
+#######################################################################
+#
+#SNOW_ALBEDO        USACE
+#SNOW_DENSITY       DENS_BRAS
+#BLOWING            FALSE
+GLACIER             SCALING
+#COMPUTE_TREELINE   FALSE
+#DIST_PRCP          FALSE
+#PREC_EXPT          0.6
+#CORRPREC           FALSE
+#MAX_SNOW_TEMP      0.5
+#MIN_RAIN_TEMP      -0.5
+
+#######################################################################
+# Turbulent Flux Parameters
+# Generally these default values do not need to be overridden
+#######################################################################
+#MIN_WIND_SPEED     0.1
+#AERO_RESIST_CANSNOW    AR_406_FULL
+
+#######################################################################
+# Meteorological Forcing Disaggregation Parameters
+# Generally these default values do not need to be overridden
+#######################################################################
+#OUTPUT_FORCE       FALSE
+#PLAPSE             TRUE
+#SW_PREC_THRESH     0
+#MTCLIM_SWE_CORR    TRUE   
+#VP_ITER            VP_ITER_ANNUAL
+
+#VP_INTERP          TRUE
+#LW_TYPE            LW_PRATA
+     
+#LW_CLOUD           LW_CLOUD_DEARDORFF
+
+#######################################################################
+# Miscellaneous Simulation Parameters
+# Generally these default values do not need to be overridden
+#######################################################################
+#CONTINUEONERROR    TRUE
+#LOG_MATRIC         FALSE
+                                          
+#SPATIAL_SNOW       FALSE              
+
+#######################################################################
+# State Files and Parameters
+#######################################################################
+#INIT_STATE         (put the initial state path/filename here)
+#STATENAME          (put the path/prefix of output state file here)
+#STATEYEAR          2000
+#STATEMONTH         12
+#STATEDAY           31
+#BINARY_STATE_FILE  FALSE
+
+#######################################################################
+# Forcing Files and Parameters
+#######################################################################
+FORCING1  /Users/jhamman/workdir/VIC_glacier_tests/hunza/forcings/forcings_     
+N_TYPES             7
+FORCE_TYPE          AIR_TEMP        SIGNED          100
+FORCE_TYPE          VP              UNSIGNED        1000
+FORCE_TYPE          PRESSURE        UNSIGNED        100
+FORCE_TYPE          WIND            UNSIGNED        100
+FORCE_TYPE          SHORTWAVE       UNSIGNED        10
+FORCE_TYPE          LONGWAVE        UNSIGNED        10
+FORCE_TYPE          PREC            UNSIGNED        100
+FORCE_FORMAT        BINARY
+FORCE_ENDIAN        LITTLE         
+FORCE_DT            3              
+FORCEYEAR           1948           
+FORCEMONTH          1              
+FORCEDAY            1              
+FORCEHOUR           0              
+GRID_DECIMAL        3
+WIND_H              10.0   
+MEASURE_H           2.0    
+ALMA_INPUT          FALSE
+
+#######################################################################
+# Mountainous Simulation Options
+#######################################################################
+PLAPSE              TRUE 
+COMPUTE_TREELINE    FALSE
+SNOW_BAND           8 /Users/jhamman/workdir/VIC_glacier_tests/hunza/inputs/snowbnd_std.txt
+
+#######################################################################
+# Land Surface Files and Parameters
+#######################################################################
+NLAYER              3
+SOIL                /Users/jhamman/workdir/VIC_glacier_tests/hunza/inputs/soil_std.txt    
+ARC_SOIL            FALSE  
+BASEFLOW            ARNO 
+JULY_TAVG_SUPPLIED  TRUE 
+VEGPARAM            /Users/jhamman/workdir/VIC_glacier_tests/hunza/inputs/veg_std.txt  
+VEGPARAM_LAI        TRUE 
+LAI_SRC             LAI_FROM_VEGLIB
+ROOT_ZONES          3
+VEGLIB              /Users/jhamman/workdir/VIC_glacier_tests/hunza/inputs/veglib_lumped.txt
+
+#######################################################################
+# Output Files and Parameters
+#######################################################################
+RESULT_DIR          /Users/jhamman/workdir/VIC_glacier_tests/hunza/outputs/vic.4.2.dev_glacier_off_hunza
+OUT_STEP            24     
+SKIPYEAR            0
+COMPRESS            FALSE
+BINARY_OUTPUT       FALSE
+ALMA_OUTPUT         FALSE
+MOISTFRACT          FALSE
+PRT_HEADER          TRUE  
+PRT_SNOW_BAND       TRUE  
+
+#######################################################################
+# Output File Contents
+#######################################################################
+
+  N_OUTFILES    2
+
+  OUTFILE       fluxes        8
+  OUTVAR        OUT_PREC          %.4f        OUT_TYPE_FLOAT 1
+  OUTVAR        OUT_AIR_TEMP      %.4f        OUT_TYPE_FLOAT 1
+  OUTVAR        OUT_SHORTWAVE     %.4f        OUT_TYPE_FLOAT 1
+  OUTVAR        OUT_LONGWAVE      %.4f        OUT_TYPE_FLOAT 1
+  OUTVAR        OUT_EVAP          %.4f        OUT_TYPE_FLOAT 1
+  OUTVAR        OUT_RUNOFF        %.4f        OUT_TYPE_FLOAT 1
+  OUTVAR        OUT_BASEFLOW      %.4f        OUT_TYPE_FLOAT 1
+  OUTVAR        OUT_SOIL_MOIST    %.4f        OUT_TYPE_FLOAT 1
+
+  OUTFILE      snow        3
+  OUTVAR       OUT_SWE            %.4f        OUT_TYPE_FLOAT 1
+  OUTVAR       OUT_SNOW_MELT      %.4f        OUT_TYPE_FLOAT 1
+  OUTVAR       OUT_SWE_BAND       %.4f        OUT_TYPE_FLOAT 1
+#  OUTVAR       OUT_IWE_BAND     %.4f        OUT_TYPE_FLOAT 1
+#  OUTVAR       OUT_BN_BAND      %.4f        OUT_TYPE_FLOAT 1
