@@ -43,8 +43,8 @@ FROZEN_SOIL         FALSE
 # Generally these default values do not need to be overridden
 #######################################################################
 #
-#SNOW_ALBEDO        USACE
-#SNOW_DENSITY       DENS_BRAS
+SNOW_ALBEDO         USACE
+SNOW_DENSITY        DENS_BRAS
 #BLOWING            FALSE
 GLACIER             DYNAMIC
 #COMPUTE_TREELINE   FALSE
@@ -143,7 +143,7 @@ VEGLIB              /Users/jhamman/workdir/VIC_glacier_tests/hunza/inputs/veglib
 #######################################################################
 # Output Files and Parameters
 #######################################################################
-RESULT_DIR          /Users/jhamman/workdir/VIC_glacier_tests/hunza/outputs/vic.4.2.dev_hunza
+RESULT_DIR          /Users/jhamman/workdir/VIC_glacier_tests/hunza/outputs/vic.4.2.dev_dynamic_on_hunza
 OUT_STEP            24     
 SKIPYEAR            0
 COMPRESS            FALSE
@@ -157,21 +157,21 @@ PRT_SNOW_BAND       TRUE
 # Output File Contents
 #######################################################################
 
-  N_OUTFILES    2
+#   N_OUTFILES    2
 
-  OUTFILE       fluxes            8
-  OUTVAR        OUT_PREC          %.4f        OUT_TYPE_FLOAT 1
-  OUTVAR        OUT_AIR_TEMP      %.4f        OUT_TYPE_FLOAT 1
-  OUTVAR        OUT_SHORTWAVE     %.4f        OUT_TYPE_FLOAT 1
-  OUTVAR        OUT_LONGWAVE      %.4f        OUT_TYPE_FLOAT 1
-  OUTVAR        OUT_EVAP          %.4f        OUT_TYPE_FLOAT 1
-  OUTVAR        OUT_RUNOFF        %.4f        OUT_TYPE_FLOAT 1
-  OUTVAR        OUT_BASEFLOW      %.4f        OUT_TYPE_FLOAT 1
-  OUTVAR        OUT_SOIL_MOIST    %.4f        OUT_TYPE_FLOAT 1
+#   OUTFILE       fluxes            8
+#   OUTVAR        OUT_PREC          %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR        OUT_AIR_TEMP      %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR        OUT_SHORTWAVE     %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR        OUT_LONGWAVE      %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR        OUT_EVAP          %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR        OUT_RUNOFF        %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR        OUT_BASEFLOW      %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR        OUT_SOIL_MOIST    %.4f        OUT_TYPE_FLOAT 1
 
-  OUTFILE      snow               3
-  OUTVAR       OUT_SWE            %.4f        OUT_TYPE_FLOAT 1
-  OUTVAR       OUT_SNOW_MELT      %.4f        OUT_TYPE_FLOAT 1
-  OUTVAR       OUT_SWE_BAND       %.4f        OUT_TYPE_FLOAT 1
-#  OUTVAR       OUT_IWE_BAND     %.4f        OUT_TYPE_FLOAT 1
-#  OUTVAR       OUT_BN_BAND      %.4f        OUT_TYPE_FLOAT 1
+#   OUTFILE      snow               3
+#   OUTVAR       OUT_SWE            %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR       OUT_SNOW_MELT      %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR       OUT_SWE_BAND       %.4f        OUT_TYPE_FLOAT 1
+# #  OUTVAR       OUT_IWE_BAND     %.4f        OUT_TYPE_FLOAT 1
+# #  OUTVAR       OUT_BN_BAND      %.4f        OUT_TYPE_FLOAT 1

@@ -43,7 +43,7 @@ FROZEN_SOIL         FALSE
 # Generally these default values do not need to be overridden
 #######################################################################
 #
-SNOW_ALBEDO        SUN1999
+SNOW_ALBEDO        USACE
 SNOW_DENSITY       DENS_BRAS
 #BLOWING            FALSE
 GLACIER             SCALING
@@ -154,7 +154,7 @@ PRT_SNOW_BAND       TRUE
 # Output File Contents
 #######################################################################
 
-#   N_OUTFILES    2
+   N_OUTFILES    1
 
 #   OUTFILE       fluxes        8
 #   OUTVAR        OUT_PREC          %.4f        OUT_TYPE_FLOAT 1
@@ -166,9 +166,12 @@ PRT_SNOW_BAND       TRUE
 #   OUTVAR        OUT_BASEFLOW      %.4f        OUT_TYPE_FLOAT 1
 #   OUTVAR        OUT_SOIL_MOIST    %.4f        OUT_TYPE_FLOAT 1
 
-#   OUTFILE      snow        3
-#   OUTVAR       OUT_SWE            %.4f        OUT_TYPE_FLOAT 1
-#   OUTVAR       OUT_SNOW_MELT      %.4f        OUT_TYPE_FLOAT 1
-#   OUTVAR       OUT_SWE_BAND       %.4f        OUT_TYPE_FLOAT 1
-# #  OUTVAR       OUT_IWE_BAND     %.4f        OUT_TYPE_FLOAT 1
-# #  OUTVAR       OUT_BN_BAND      %.4f        OUT_TYPE_FLOAT 1
+   OUTFILE      snow               5
+   OUTVAR       OUT_SWE            %.4f        OUT_TYPE_FLOAT 1
+   OUTVAR       OUT_SNOW_MELT      %.4f        OUT_TYPE_FLOAT 1
+   OUTVAR       OUT_SWE_BAND       %.4f        OUT_TYPE_FLOAT 1
+   OUTVAR       OUT_IWE_BAND       %.4f        OUT_TYPE_FLOAT 1
+   OUTVAR       OUT_BN_BAND        %.4f        OUT_TYPE_FLOAT 1
+   OUTVAR       OUT_SNOW_DENSITY   %.4f        OUT_TYPE_FLOAT 1
+   OUTVAR       OUT_SNOW_DENSITY_BAND  %.4f        OUT_TYPE_FLOAT 1
+

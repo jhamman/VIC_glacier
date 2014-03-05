@@ -39,7 +39,7 @@ NO_FLUX             FALSE
 IMPLICIT            FALSE
 EXP_TRANS           FALSE
 
-SNOW_ALBEDO        SUN1999
+SNOW_ALBEDO        USACE
 SNOW_DENSITY       DENS_BRAS
 BLOWING             FALSE
 

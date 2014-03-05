@@ -17,7 +17,7 @@ ENDMONTH            12
 ENDDAY              31 
 
 MIN_WIND_SPEED      0.1
-MAX_SNOW_TEMP       1.5
+MAX_SNOW_TEMP       0.5
 MIN_RAIN_TEMP       -0.5 
 EQUAL_AREA          FALSE
 
@@ -31,7 +31,7 @@ CONTINUEONERROR     FALSE
 #######################################################################
 # Snow and Frozen Soil Simulation Options
 #######################################################################
-FROZEN_SOIL         TRUE 
+FROZEN_SOIL         FALSE 
 QUICK_FLUX          TRUE 
 NODES               3
 QUICK_SOLVE         FALSE
@@ -39,8 +39,8 @@ NO_FLUX             FALSE
 IMPLICIT            FALSE
 EXP_TRANS           FALSE
 
-SNOW_ALBEDO         SUN1999
-SNOW_DENSITY        DENS_SNTHRM  
+SNOW_ALBEDO         USACE
+SNOW_DENSITY        DENS_BRAS
 BLOWING             FALSE
 GLACIER             FALSE   
 
@@ -123,21 +123,21 @@ PRT_SNOW_BAND       TRUE
 # Output File Contents
 #######################################################################
 
-  N_OUTFILES    2
+#   N_OUTFILES    2
 
-  OUTFILE       fluxes        8
-  OUTVAR        OUT_PREC          %.4f        OUT_TYPE_FLOAT 1
-  OUTVAR        OUT_AIR_TEMP      %.4f        OUT_TYPE_FLOAT 1
-  OUTVAR        OUT_SHORTWAVE     %.4f        OUT_TYPE_FLOAT 1
-  OUTVAR        OUT_LONGWAVE      %.4f        OUT_TYPE_FLOAT 1
-  OUTVAR        OUT_EVAP          %.4f        OUT_TYPE_FLOAT 1
-  OUTVAR        OUT_RUNOFF        %.4f        OUT_TYPE_FLOAT 1
-  OUTVAR        OUT_BASEFLOW      %.4f        OUT_TYPE_FLOAT 1
-  OUTVAR        OUT_SOIL_MOIST    %.4f        OUT_TYPE_FLOAT 1
+#   OUTFILE       fluxes        8
+#   OUTVAR        OUT_PREC          %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR        OUT_AIR_TEMP      %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR        OUT_SHORTWAVE     %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR        OUT_LONGWAVE      %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR        OUT_EVAP          %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR        OUT_RUNOFF        %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR        OUT_BASEFLOW      %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR        OUT_SOIL_MOIST    %.4f        OUT_TYPE_FLOAT 1
 
-  OUTFILE      snow           3
-  OUTVAR       OUT_SWE            %.4f        OUT_TYPE_FLOAT 1
-  OUTVAR       OUT_SNOW_MELT      %.4f        OUT_TYPE_FLOAT 1
-  OUTVAR       OUT_SWE_BAND       %.4f        OUT_TYPE_FLOAT 1
-#  OUTVAR       OUT_IWE_BAND     %.4f        OUT_TYPE_FLOAT 1
-#  OUTVAR       OUT_BN_BAND      %.4f        OUT_TYPE_FLOAT 1
+#   OUTFILE      snow           3
+#   OUTVAR       OUT_SWE            %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR       OUT_SNOW_MELT      %.4f        OUT_TYPE_FLOAT 1
+#   OUTVAR       OUT_SWE_BAND       %.4f        OUT_TYPE_FLOAT 1
+# #  OUTVAR       OUT_IWE_BAND     %.4f        OUT_TYPE_FLOAT 1
+# #  OUTVAR       OUT_BN_BAND      %.4f        OUT_TYPE_FLOAT 1

@@ -43,7 +43,7 @@ FROZEN_SOIL         FALSE
 # Generally these default values do not need to be overridden
 #######################################################################
 #
-SNOW_ALBEDO        SUN1999
+SNOW_ALBEDO        USACE
 SNOW_DENSITY       DENS_BRAS
 #BLOWING            FALSE
 #GLACIER            FALSE
