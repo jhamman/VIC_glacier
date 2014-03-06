@@ -55,7 +55,7 @@ GLACIER             SCALING
 #MIN_RAIN_TEMP      -0.5
 
 EQUAL_AREA FALSE  
-RESOLUTION 0.25 
+RESOLUTION 0.0625
 
 #######################################################################
 # Turbulent Flux Parameters
@@ -151,13 +151,13 @@ BINARY_OUTPUT       FALSE
 ALMA_OUTPUT         FALSE
 MOISTFRACT          FALSE
 PRT_HEADER          TRUE  
-PRT_SNOW_BAND       TRUE  
+PRT_SNOW_BAND       FALSE  
 
 #######################################################################
 # Output File Contents
 #######################################################################
 
-  # N_OUTFILES    2
+  N_OUTFILES    1
 
   # OUTFILE       fluxes        8
   # OUTVAR        OUT_PREC          %.4f        OUT_TYPE_FLOAT 1
@@ -169,9 +169,11 @@ PRT_SNOW_BAND       TRUE
   # OUTVAR        OUT_BASEFLOW      %.4f        OUT_TYPE_FLOAT 1
   # OUTVAR        OUT_SOIL_MOIST    %.4f        OUT_TYPE_FLOAT 1
 
-  # OUTFILE      snow          5
-  # OUTVAR       OUT_SWE            %.4f        OUT_TYPE_FLOAT 1
-  # OUTVAR       OUT_SNOW_MELT      %.4f        OUT_TYPE_FLOAT 1
-  # OUTVAR       OUT_SWE_BAND       %.4f        OUT_TYPE_FLOAT 1
-  # OUTVAR       OUT_IWE_BAND       %.4f        OUT_TYPE_FLOAT 1
-  # OUTVAR       OUT_BN_BAND        %.4f        OUT_TYPE_FLOAT 1
+   OUTFILE      glacier               7
+   OUTVAR       OUT_SWE            %.4f        OUT_TYPE_FLOAT 1
+   OUTVAR       OUT_SNOW_MELT      %.4f        OUT_TYPE_FLOAT 1
+   OUTVAR       OUT_SWE_BAND       %.4f        OUT_TYPE_FLOAT 1
+   OUTVAR       OUT_IWE_BAND       %.4f        OUT_TYPE_FLOAT 1
+   OUTVAR       OUT_BN_BAND        %.4f        OUT_TYPE_FLOAT 1
+   OUTVAR       OUT_SNOW_DENSITY   %.4f        OUT_TYPE_FLOAT 1
+   OUTVAR       OUT_SNOW_DENS_BAND  %.4f        OUT_TYPE_FLOAT 1

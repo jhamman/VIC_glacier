@@ -154,24 +154,24 @@ PRT_SNOW_BAND       TRUE
 # Output File Contents
 #######################################################################
 
-   N_OUTFILES    1
+  # N_OUTFILES    2
 
-#   OUTFILE       fluxes        8
-#   OUTVAR        OUT_PREC          %.4f        OUT_TYPE_FLOAT 1
-#   OUTVAR        OUT_AIR_TEMP      %.4f        OUT_TYPE_FLOAT 1
-#   OUTVAR        OUT_SHORTWAVE     %.4f        OUT_TYPE_FLOAT 1
-#   OUTVAR        OUT_LONGWAVE      %.4f        OUT_TYPE_FLOAT 1
-#   OUTVAR        OUT_EVAP          %.4f        OUT_TYPE_FLOAT 1
-#   OUTVAR        OUT_RUNOFF        %.4f        OUT_TYPE_FLOAT 1
-#   OUTVAR        OUT_BASEFLOW      %.4f        OUT_TYPE_FLOAT 1
-#   OUTVAR        OUT_SOIL_MOIST    %.4f        OUT_TYPE_FLOAT 1
+  # OUTFILE       fluxes        8
+  # OUTVAR        OUT_PREC          %.4f        OUT_TYPE_FLOAT 1
+  # OUTVAR        OUT_AIR_TEMP      %.4f        OUT_TYPE_FLOAT 1
+  # OUTVAR        OUT_SHORTWAVE     %.4f        OUT_TYPE_FLOAT 1
+  # OUTVAR        OUT_LONGWAVE      %.4f        OUT_TYPE_FLOAT 1
+  # OUTVAR        OUT_EVAP          %.4f        OUT_TYPE_FLOAT 1
+  # OUTVAR        OUT_RUNOFF        %.4f        OUT_TYPE_FLOAT 1
+  # OUTVAR        OUT_BASEFLOW      %.4f        OUT_TYPE_FLOAT 1
+  # OUTVAR        OUT_SOIL_MOIST    %.4f        OUT_TYPE_FLOAT 1
 
-   OUTFILE      snow               5
+   OUTFILE      snow               7
    OUTVAR       OUT_SWE            %.4f        OUT_TYPE_FLOAT 1
    OUTVAR       OUT_SNOW_MELT      %.4f        OUT_TYPE_FLOAT 1
    OUTVAR       OUT_SWE_BAND       %.4f        OUT_TYPE_FLOAT 1
    OUTVAR       OUT_IWE_BAND       %.4f        OUT_TYPE_FLOAT 1
    OUTVAR       OUT_BN_BAND        %.4f        OUT_TYPE_FLOAT 1
    OUTVAR       OUT_SNOW_DENSITY   %.4f        OUT_TYPE_FLOAT 1
-   OUTVAR       OUT_SNOW_DENSITY_BAND  %.4f        OUT_TYPE_FLOAT 1
+   OUTVAR       OUT_SNOW_DENS_BAND  %.4f        OUT_TYPE_FLOAT 1
 
