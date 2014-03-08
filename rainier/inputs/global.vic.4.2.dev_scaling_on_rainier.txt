@@ -43,7 +43,6 @@ FROZEN_SOIL         FALSE
 # Generally these default values do not need to be overridden
 #######################################################################
 #
-SNOW_ALBEDO        USACE
 SNOW_DENSITY       DENS_BRAS
 #BLOWING            FALSE
 GLACIER             SCALING
@@ -91,12 +90,12 @@ RESOLUTION 0.0625
 #######################################################################
 # State Files and Parameters
 #######################################################################
-#INIT_STATE         (put the initial state path/filename here)
-#STATENAME          (put the path/prefix of output state file here)
-#STATEYEAR          2000
-#STATEMONTH         12
-#STATEDAY           31
-#BINARY_STATE_FILE  FALSE
+INIT_STATE         /Users/jhamman/workdir/VIC_glacier_tests/rainier/inputs/state_19480101.txt
+STATENAME          /Users/jhamman/workdir/VIC_glacier_tests/rainier/inputs/state
+STATEYEAR          2010
+STATEMONTH         12
+STATEDAY           31
+BINARY_STATE_FILE  FALSE
 
 #######################################################################
 # Forcing Files and Parameters
